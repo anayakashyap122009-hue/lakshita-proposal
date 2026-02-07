@@ -16,14 +16,14 @@ body {
 
 h1 {
     color: #FF5D8F;
-    font-size: 46px;
-    margin-top: 50px;
+    font-size: 42px;
+    margin-top: 40px;
     font-family: 'Courier New', Courier, monospace;
 }
 
 .heart {
-    font-size: 40px;
-    margin: 20px;
+    font-size: 36px;
+    margin: 15px;
     animation: swing 2s infinite;
 }
 
@@ -33,18 +33,17 @@ h1 {
 }
 
 /* ===== Hanging Nicknames ===== */
-
 .nickname-container {
     display: flex;
     justify-content: center;
-    gap: 35px;
-    margin-top: 50px;
+    gap: 30px;
+    margin-top: 40px;
     flex-wrap: wrap;
 }
 
 .hanging {
     position: relative;
-    padding-top: 50px;
+    padding-top: 45px;
     transform-origin: top center;
 }
 
@@ -60,7 +59,7 @@ h1 {
     top: 0;
     left: 50%;
     width: 2px;
-    height: 45px;
+    height: 40px;
     background: #FF5D8F;
     transform: translateX(-50%);
 }
@@ -68,16 +67,16 @@ h1 {
 .hanging::after {
     content: "💗";
     position: absolute;
-    top: 35px;
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .nickname {
     background: white;
-    padding: 12px 20px;
+    padding: 10px 18px;
     border-radius: 10px;
-    font-size: 22px;
+    font-size: 20px;
     color: #FF6F91;
     font-weight: bold;
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
@@ -100,14 +99,14 @@ h1 {
     100% { transform: rotate(0); }
 }
 
-/* Fall */
+/* Fall animation */
 .fall {
-    animation: fallDown 1.5s forwards;
+    animation: fallDown 1.4s forwards;
 }
 
 @keyframes fallDown {
     to {
-        transform: translateY(500px) rotate(90deg);
+        transform: translateY(600px) rotate(90deg);
         opacity: 0;
     }
 }
@@ -115,17 +114,18 @@ h1 {
 /* Message */
 .message {
     color: #FF4F77;
-    font-size: 22px;
+    font-size: 20px;
     max-width: 650px;
-    margin: 40px auto;
+    margin: 35px auto;
+    padding: 0 10px;
     font-family: Georgia, serif;
 }
 
 /* Buttons */
 button {
-    margin: 30px 10px;
-    padding: 15px 35px;
-    font-size: 20px;
+    margin: 20px 10px;
+    padding: 14px 34px;
+    font-size: 18px;
     background: #FF6F91;
     border: none;
     border-radius: 8px;
@@ -137,10 +137,10 @@ button:hover {
     background: #FF5D8F;
 }
 
-/* Response text */
+/* Response */
 #response {
-    font-size: 26px;
-    margin-top: 30px;
+    font-size: 24px;
+    margin-top: 25px;
     font-weight: bold;
 }
 </style>
@@ -168,16 +168,15 @@ button:hover {
     <p>My love, Lakshita,</p>
     <p>
         You are my happiness, my peace, and my forever.
-        I promise to respect you, protect you, and love you endlessly.
         Even though it’s been 3 months and 27 days,
-        I want you to know how deeply I love you 💗
+        I just want you to know how deeply I love you 💗
     </p>
     <p><strong>Will you be my girl and be mine forever?</strong></p>
 </div>
 
 <div>
-    <button onclick="sayYes()">Yes</button>
-    <button onclick="sayNo()">No</button>
+    <button onclick="sayYes()">Yes 💖</button>
+    <button onclick="sayNo()">No 🙈</button>
 </div>
 
 <div id="response"></div>
@@ -191,16 +190,14 @@ function sayYes() {
 
 function sayNo() {
     document.getElementById("response").innerHTML =
-        "💔 Oh no… my heart is broken";
+        "😌💞 No doesn’t matter… my love stays forever!";
     document.getElementById("response").style.color = "#B00020";
 
     document.querySelectorAll(".hanging").forEach((el, i) => {
-        setTimeout(() => el.classList.add("fall"), i * 200);
+        setTimeout(() => el.classList.add("fall"), i * 180);
     });
 }
 </script>
 
 </body>
 </html>
-
-
