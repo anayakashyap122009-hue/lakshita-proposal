@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposal for Lakshita</title>
+
+<style>
+body {
+    background-color: #F8C8D8;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #FF5D8F;
+    font-size: 48px;
+    margin-top: 50px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.heart {
+    color: #FF5D8F;
+    font-size: 40px;
+    margin: 20px;
+    animation: swing 2s infinite;
+}
+
+.heart-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* ================= HANGING NICKNAMES ================= */
+
+.nickname-container {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.hanging {
+    position: relative;
+    padding-top: 50px;
+    transform-origin: top center;
+}
+
+/* Different swing speeds */
+.hanging:nth-child(1) { animation: hangSwing 3s ease-in-out infinite; }
+.hanging:nth-child(2) { animation: hangSwing 4s ease-in-out infinite; }
+.hanging:nth-child(3) { animation: hangSwing 2.8s ease-in-out infinite; }
+.hanging:nth-child(4) { animation: hangSwing 3.5s ease-in-out infinite; }
+.hanging:nth-child(5) { animation: hangSwing 4.2s ease-in-out infinite; }
+
+/* String */
+.hanging::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 45px;
+    background-color: #FF5D8F;
+    transform: translateX(-50%);
+}
+
+/* Heart charm */
+.hanging::after {
+    content: "💗";
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+}
+
+/* Nickname tag */
+.nickname {
+    background-color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 22px;
+    color: #FF6F91;
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Swing animation */
+@keyframes hangSwing {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(6deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-6deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Fall animation */
+.fall {
+    animation: fallDown 1.5s forwards ease-in;
+}
+
+@keyframes fallDown {
+    0% { transform: rotate(0deg); opacity: 1; }
+    100% {
+        transform: translateY(500px) rotate(90deg);
+        opacity: 0;
+    }
+}
+
+/* ================= MESSAGE ================= */
+
+.message {
+    color: #FF4F77;
+    font-size: 22px;
+    max-width: 600px;
+    margin: 40px auto;
+    font-family: 'Georgia', serif;
+}
+
+/* ================= BUTTONS ================= */
+
+.yes-button, .no-button {
+    margin-top: 40px;
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #FF6F91;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.yes-button:hover, .no-button:hover {
+    background-color: #FF5D8F;
+}
+
+@keyframes swing {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Will You Be Mine Forever, Lakshita?</h1>
+
+<div class="heart-container">
+    <span class="heart">💖</span>
+    <span class="heart">❤️</span>
+    <span class="heart">💖</span>
+</div>
+
+<div class="nickname-container" id="nicknames">
+    <div class="hanging"><span class="nickname">Sweetheart</span></div>
+    <div class="hanging"><span class="nickname">Penguin</span></div>
+    <div class="hanging"><span class="nickname">Lovieee Dovieeee</span></div>
+    <div class="hanging"><span class="nickname">Cutiieeee</span></div>
+    <div class="hanging"><span class="nickname">Lakshuuuu</span></div>
+</div>
+
+<div class="message">
+    <p>My love, Lakshita,</p>
+    <p>
+        You are my happiness, my peace, and my forever.
+        I promise to respect you, protect you, and love you endlessly.
+        Life feels complete with you, and I want every tomorrow to be with you.
+        IK we're been together since 3months and 27days but on this propose day
+        i just want youu to bee in knowledge off howw muchh i lovee youuu💗
+    </p>
+    <p><strong>Will you me Girll  and be mine forever?</strong></p>
+</div>
+
+<div>
+    <button class="yes-button" onclick="sayYes()">Yes</button>
+    <button class="no-button" onclick="sayNo()">No</button>
+</div>
+
+<script>
+function sayYes() {
+    alert("I knew it 😭💖 Forever starts now!");
+}
+
+function sayNo() {
+    alert("NOOO 😭💔 The nicknames are heartbroken…");
+    const hangings = document.querySelectorAll(".hanging");
+    hangings.forEach((item, index) => {
+        setTimeout(() => {
+            item.classList.add("fall");
+        }, index * 200);
+    });
+}
+</script>
+
+</body>
+</html>
+convert this in qr
